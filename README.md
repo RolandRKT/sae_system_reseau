@@ -24,7 +24,7 @@
 - **Fonctionnalité :**
   - Crée une instance de la classe Serveur et démarre un thread pour le serveur.
 
-### Serveur.java
+### Server.java
 - **Objectif :** Cette classe représente le serveur qui écoute les connexions des clients.
 - **Fonctionnalité :**
   - Crée un serveur socket et attend les connexions entrantes.
@@ -32,4 +32,4 @@
   - Boucle indéfiniment, acceptant les connexions et déléguant leur gestion à ClientHandler.
   - Ferme la connexion du serveur lorsqu'il est interrompu ou lorsqu'il détecte une erreur.
 
-À noter que `Serveur` est responsable de la gestion des connexions entrantes et de la création de nouvelles instances de `ClientHandler` pour chaque client, tandis que ClientHandler est responsable de la gestion de la communication avec un client spécifique.
+À noter que `Server` est responsable de la gestion des connexions entrantes et de la création de nouvelles instances de `ClientHandler` pour chaque client, tandis que ClientHandler est responsable de la gestion de la communication avec un client spécifique.
