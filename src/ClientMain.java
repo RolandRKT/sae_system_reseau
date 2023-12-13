@@ -19,7 +19,7 @@ import java.net.Socket;
  * 4. Le client attend la réponse du serveur et l'affiche.
  * 5. Le client peut être arrêté en entrant '/exit'.
  *
- * Remarque : Un délai de 5 secondes a été placé entre chaque envoie de messages au serveur.
+ * Remarque : Un délai de 3 secondes a été placé entre chaque envoie de messages au serveur.
  *
  * @author Roland RAKOTOMALALA / Rebson Dodji DAHOUEDE
  * @version 1.0
@@ -43,7 +43,7 @@ public class ClientMain {
             // Lire l'entrée utilisateur et envoyer au serveur en boucle
             BufferedReader userInput = new BufferedReader(new InputStreamReader(System.in));
             while (true) {
-                System.out.print("Entrez un message pour le serveur (ou 'exit' pour quitter) : ");
+                System.out.print("Entrez un message pour le serveur (ou '/exit' pour quitter) : ");
                 String message = userInput.readLine();
 
                 if ("/exit".equalsIgnoreCase(message)) {
@@ -57,9 +57,9 @@ public class ClientMain {
                 String response = reader.readLine();
                 System.out.println("Réponse du serveur : " + response);
 
-                // Attente de 5 secondes avant de pouvoir relancer un message
+                // Attente de 3 secondes avant de pouvoir relancer un message
                 try {
-                    Thread.sleep(5000);
+                    Thread.sleep(3000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
