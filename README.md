@@ -1,5 +1,9 @@
 # sae_system_reseau
 
+## Duo
+- Roland RAKOTOMALALA
+- Resbon Dodji Dahouede
+
 ## Information supplémentaire sur les classes
 
 ### ClientHandler.java
