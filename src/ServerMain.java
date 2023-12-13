@@ -25,7 +25,7 @@ public class ServerMain {
      */
     public static void main(String[] args) {
         // Instancie un objet Serveur avec le numéro de port 4444
-        Serveur serveur = new Serveur(4444);
+        Server serveur = new Server(4444);
 
         // Crée un thread pour le serveur et le démarre
         Thread serverThread = new Thread(serveur);
