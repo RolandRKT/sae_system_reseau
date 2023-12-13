@@ -16,7 +16,7 @@ import java.net.*;
  *
  * @author Roland RAKOTOMALALA / Rebson Dodji DAHOUEDE
  * @version 1.0
- */
+*/
 public class ClientHandler implements Runnable {
     private Socket clientSocket;
 
