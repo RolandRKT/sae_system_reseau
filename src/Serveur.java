@@ -15,6 +15,7 @@ public class Serveur implements Runnable {
         try {
             this.serverSock = new ServerSocket(this.numPort);
             System.out.println("Serveur en attente de connexions...");
+            System.out.println(this.serverSock.getInetAddress());
 
             while (true) {
                 Socket clientSocket = serverSock.accept();

@@ -23,11 +23,11 @@ public class ClientHandler implements Runnable {
             while ((clientMessage = reader.readLine()) != null) {
                 System.out.println("Message du client : " + clientMessage);
 
-                // Répondre au client
+                // Réponse au client
                 writer.println("Message reçu : " + clientMessage);
             }
 
-            // Fermer la connexion
+            // Ferme la connexion
             clientSocket.close();
         } catch (IOException e) {
             e.printStackTrace();
