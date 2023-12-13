@@ -1,4 +1,5 @@
 package src;
+
 import java.io.*;
 import java.net.*;
 
@@ -18,16 +19,16 @@ public class ClientHandler implements Runnable {
             // Flux d'entrée depuis le client
             BufferedReader reader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 
-            // Lire le message du client
+            // Lire le message du client et diffuser à tous les autres clients
             String clientMessage;
             while ((clientMessage = reader.readLine()) != null) {
                 System.out.println("Message du client : " + clientMessage);
 
-                // Réponse au client
+                // Répondre au client
                 writer.println("Message reçu : " + clientMessage);
             }
 
-            // Ferme la connexion
+            // Fermer la connexion
             clientSocket.close();
         } catch (IOException e) {
             e.printStackTrace();
