@@ -1,5 +1,3 @@
-package src;
-
 /**
  * La classe `ServerMain` représente la classe principale pour le programme serveur.
  * Elle est responsable de créer une instance de la classe `Serveur` et de démarrer un thread pour le serveur.

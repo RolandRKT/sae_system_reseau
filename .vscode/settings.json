@@ -1,0 +1,14 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/home/rakotomalala/Public/javaFX/lib/javafx.base.jar",
+        "/home/rakotomalala/Public/javaFX/lib/javafx.controls.jar",
+        "/home/rakotomalala/Public/javaFX/lib/javafx.fxml.jar",
+        "/home/rakotomalala/Public/javaFX/lib/javafx.graphics.jar",
+        "/home/rakotomalala/Public/javaFX/lib/javafx.media.jar",
+        "/home/rakotomalala/Public/javaFX/lib/javafx.swing.jar",
+        "/home/rakotomalala/Public/javaFX/lib/javafx.web.jar",
+        "/home/rakotomalala/Public/javaFX/lib/javafx-swt.jar"
+    ],
+    "java.project.outputPath": "bin"
+}

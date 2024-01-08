@@ -1,0 +1,2 @@
+javac -d bin/ --module-path /home/rakotomalala/Public/javaFX/lib/ --add-modules javafx.controls src/*.java
+java --module-path /home/rakotomalala/Public/javaFX/lib/ --add-modules javafx.controls -cp bin MainApp
