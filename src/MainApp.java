@@ -21,13 +21,13 @@ public class MainApp extends Application {
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
         primaryStage.setTitle("Application Minimaliste");
-
-        // Pages
+    
+        // Créer toutes les scènes au début
         createLoginScene();
         createRegisterScene();
         createMainScene();
-
-        // Affiche la page de connexion au démarrage
+    
+        // Afficher la page de connexion au démarrage
         primaryStage.setScene(loginScene);
         primaryStage.show();
     }
@@ -57,28 +57,45 @@ public class MainApp extends Application {
         TextField usernameInput = new TextField();
         TextField passwordInput = new TextField();
         Button registerButton = new Button("S'inscrire");
-
+    
         // Définir l'action du bouton
         registerButton.setOnAction(e -> primaryStage.setScene(mainScene));
-
+    
         // Organise les éléments dans une disposition VBox
         VBox layout = new VBox(10);
         layout.getChildren().addAll(label, usernameInput, passwordInput, registerButton);
         layout.setPadding(new Insets(10));
-
+    
         // Crée la scène d'inscription
         registerScene = new Scene(layout, 300, 200);
-    }
+    }    
 
     private void createMainScene() {
         // Crée les éléments de la page principale
         Label label = new Label("Bienvenue dans l'application");
+        Button privateChatButton = new Button("Chat Privé");
+        Button publicChatButton = new Button("Chat Public");
+
+        // Définir l'action des boutons
+        privateChatButton.setOnAction(e -> startPrivateChat());
+        publicChatButton.setOnAction(e -> startPublicChat());
 
         // Organise les éléments dans une disposition VBox
-        StackPane layout = new StackPane();
-        layout.getChildren().add(label);
+        VBox layout = new VBox(10);
+        layout.getChildren().addAll(label, privateChatButton, publicChatButton);
+        layout.setPadding(new Insets(10));
 
         // Crée la scène principale
         mainScene = new Scene(layout, 300, 200);
+    }
+
+    private void startPrivateChat() {
+        // Logique pour démarrer le chat privé
+        System.out.println("Démarrer le chat privé");
+    }
+
+    private void startPublicChat() {
+        // Logique pour démarrer le chat public
+        System.out.println("Démarrer le chat public");
     }
 }
