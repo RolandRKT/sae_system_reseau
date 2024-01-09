@@ -7,7 +7,75 @@ DROP TABLE IF EXISTS CLIENT;
 
 -- Création de la table CLIENT
 CREATE TABLE CLIENT (
-    Pseudo VARCHAR(22) PRIMARY KEY ,
+    Pseudo VARCHAR(22) PRIMARY KEY,
     Email VARCHAR(50), 
     Mdp VARCHAR(50)
 );
+
+-- Création de la table MESSAGE
+CREATE TABLE MESSAGE (
+    ID_Message INT PRIMARY KEY,
+    Content VARCHAR(500),
+    Date_Publication DATETIME, 
+    Likes INT
+);
+
+-- Création de la table FAVORIS
+CREATE TABLE FAVORIS (
+    Pseudo VARCHAR(22),
+    ID_Message INT,
+    PRIMARY KEY (Pseudo,ID_Message)
+);
+
+-- Création de la table SUIVRE
+CREATE TABLE SUIVRE (
+    Pseudo_suiveur VARCHAR(22),
+    Pseudo_suivi VARCHAR(22),
+    PRIMARY KEY (Pseudo, Pseudo),
+    CHECK (Pseudo_suiveur != Pseudo_suivi)
+);
+
+-- Création de la table ETRE_SUIVI_PAR
+CREATE TABLE ETRE_SUIVI_PAR (
+    Pseudo_suivi VARCHAR(22),
+    Pseudo_suiveur VARCHAR(22),
+    PRIMARY KEY (Pseudo, Pseudo)
+    CHECK (Pseudo_suiveur != Pseudo_suivi)
+);
+
+-- Création de la table PHOTO
+CREATE TABLE PHOTO (
+    Pseudo_Proprietaire VARCHAR(22) PRIMARY KEY,
+    Nom_Image VARCHAR(25)
+);
+
+
+-- ALTER TABLE CLÉS ÉTRANGÈRES
+
+-- CLIENT
+ALTER TABLE CLIENT ADD UNIQUE (Email);
+
+-- MESSAGE
+ALTER TABLE MESSAGE ADD FOREIGN KEY (Pseudo) REFRENCES CLIENT(Pseudo);
+
+-- FAVORIS
+ALTER TABLE FAVORIS ADD FOREIGN KEY (Pseudo) REFRENCES CLIENT(Pseudo);
+
+ALTER TABLE FAVORIS ADD FOREIGN KEY (ID_Message) REFRENCES MESSAGE(ID_Message);
+
+-- SUIVRE
+ALTER TABLE SUIVRE ADD FOREIGN KEY (Pseudo_suiveur) REFRENCES CLIENT(Pseudo);
+
+ALTER TABLE SUIVRE ADD FOREIGN KEY (Pseudo_suivi) REFRENCES CLIENT(Pseudo);
+ 
+-- ETRE_SUIVI_PAR
+ALTER TABLE ETRE_SUIVI_PAR ADD FOREIGN KEY (Pseudo_suiveur) REFRENCES CLIENT(Pseudo);
+
+ALTER TABLE ETRE_SUIVI_PAR ADD FOREIGN KEY (Pseudo_suivi) REFRENCES CLIENT(Pseudo);
+
+-- PHOTO
+ALTER TABLE PHOTO ADD FOREIGN KEY (Pseudo_Proprietaire) REFRENCES CLIENT(Pseudo);
+
+ALTER TABLE PHTO ADD UNIQUE (Nom_Image);
+
+
